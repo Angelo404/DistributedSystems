@@ -5,10 +5,17 @@
  */
 package layertwo.data.packageConstructor;
 
+import layertwo.data.packages.TransmitionUnit;
+
 /**
  *
- * @author Euaggelos
+ * @author Angelo
  */
-public class ExeObjConstr {
+public class ExeObjConstr extends PackageConstructor{
+
+    @Override
+    protected TransmitionUnit createPackage(TransmitionTypes type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
