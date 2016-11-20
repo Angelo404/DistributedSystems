@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package error;
+package layertwo.tasks;
 
 /**
  *
  * @author Angelo
  */
-public class ExceptionHandler {
+public interface TaskMethods<T> {
     
+    
+    public abstract void getParams(T[] params);
     
 }

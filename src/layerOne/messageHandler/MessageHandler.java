@@ -15,7 +15,7 @@ import layerOne.data.packages.DataLeaderUnit;
 import layerOne.data.packages.DataUnit;
 import layerOne.data.packages.DataUpdateUnit;
 import layerOne.data.packages.DataWannabeLeaderUnit;
-import error.ErrorMessages;
+import error.warnings.WarningMessages;
 import layerOne.messageHandler.specializedHandlers.DebugHandler;
 import layerOne.messageHandler.specializedHandlers.DiscRespHandler;
 import layerOne.messageHandler.specializedHandlers.DiscoverHandler;
@@ -89,6 +89,6 @@ public class MessageHandler implements HandlerData{
     
     @Override
     public void execute(DataUnit data) {
-        System.err.println(ErrorMessages.THIS_SHOULD_NOT_SHOW);
+        System.err.println(WarningMessages.THIS_SHOULD_NOT_SHOW);
     }
 }

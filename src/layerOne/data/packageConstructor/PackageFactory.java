@@ -6,7 +6,7 @@
 package layerOne.data.packageConstructor;
 
 import layerOne.data.packages.DataUnit;
-import error.ErrorMessages;
+import error.warnings.WarningMessages;
 
 /**
  * Factory pattern
@@ -63,7 +63,7 @@ public class PackageFactory {
                 tmpData = wannabeLeaderCon.createPackage();
                 break;
             default:
-                System.err.println(ErrorMessages.CONSTRUCTOR_SWITCH_MISSMATCH);
+                System.err.println(WarningMessages.CONSTRUCTOR_SWITCH_MISSMATCH);
                 break;
                 
         }
