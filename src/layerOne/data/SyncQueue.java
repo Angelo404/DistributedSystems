@@ -3,21 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils;
+package layerOne.data;
 
 import layerOne.data.packages.DataUnit;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  *
  * @author Angelo
  */
-public class ArrayManipulator {
+public class SyncQueue extends ConcurrentLinkedQueue<DataUnit>{
     
-    public static DataUnit pop(ArrayList<DataUnit> list){
-        DataUnit tmpData = list.get(0);
-        list.remove(0);
+    public SyncQueue(){
+        
+    }
+    
+    public DataUnit pop(){
+        DataUnit tmpData = this.poll();
         return tmpData;
     }
+    
+    
 }

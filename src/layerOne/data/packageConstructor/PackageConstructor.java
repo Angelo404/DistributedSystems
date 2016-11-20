@@ -3,21 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils;
+package layerOne.data.packageConstructor;
 
 import layerOne.data.packages.DataUnit;
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
- *
+ * Factory pattern
  * @author Angelo
  */
-public class ArrayManipulator {
+public abstract class PackageConstructor {
     
-    public static DataUnit pop(ArrayList<DataUnit> list){
-        DataUnit tmpData = list.get(0);
-        list.remove(0);
-        return tmpData;
-    }
+    public abstract DataUnit createPackage();
+    
 }

@@ -5,20 +5,20 @@
  */
 package distributedsystems;
 
-import algorithms.Algo;
-import algorithms.AlgoFactory;
-import algorithms.AlgoType;
-import daemons.Daemon;
-import daemons.DaemonFactory;
-import daemons.DaemonType;
-import data.SyncQueue;
-import data.logs.ClientMap;
-import data.packageConstructor.PackageFactory;
-import data.packages.DataUnit;
+import layerOne.algorithms.Algo;
+import layerOne.algorithms.AlgoFactory;
+import layerOne.algorithms.AlgoType;
+import layerOne.daemons.Daemon;
+import layerOne.daemons.DaemonFactory;
+import layerOne.daemons.DaemonType;
+import layerOne.data.SyncQueue;
+import layerOne.data.logs.ClientMap;
+import layerOne.data.packageConstructor.PackageFactory;
+import layerOne.data.packages.DataUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import messageHandler.MessageHandler;
-import networking.UDPBridge;
+import layerOne.messageHandler.MessageHandler;
+import layerOne.networking.UDPBridge;
 
 /**
  *

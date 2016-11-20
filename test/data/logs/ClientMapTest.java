@@ -5,6 +5,7 @@
  */
 package data.logs;
 
+import layerOne.data.logs.ClientMap;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
