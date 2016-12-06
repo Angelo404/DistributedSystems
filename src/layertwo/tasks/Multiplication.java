@@ -11,20 +11,22 @@ import layertwo.data.packages.NumericalTask;
  *
  * @author Angelo
  */
-public class Addition extends NumericalTask{
-
-    public Addition(){}
+public class Multiplication extends NumericalTask{
+    
+    public Multiplication(){}
     
     @Override
-    public Number call() {
+    public Number call(){
         return executeOperation();
     }
-    
+
     @Override
     public Number executeOperation() {
         total = 0.0;
         for(Double d : params)
-            total += d;
+            total *= d;
         return total;
     }
+
+
 }

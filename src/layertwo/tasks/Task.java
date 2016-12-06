@@ -5,15 +5,20 @@
  */
 package layertwo.tasks;
 
+import layertwo.data.packages.Params;
+
 /**
  *
  * @author Angelo
  */
-public abstract class Task {
+public abstract class Task{
     
     public Task(){
         
     }
+    
+    public abstract void giveParams(Params params);
+    
     
         
     @Override

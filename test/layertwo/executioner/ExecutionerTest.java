@@ -5,8 +5,9 @@
  */
 package layertwo.executioner;
 
-import java.util.List;
 import java.util.concurrent.Callable;
+import layertwo.data.packages.NumericalTask;
+import layertwo.data.packages.Params;
 import layertwo.tasks.Addition;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -45,9 +46,10 @@ public class ExecutionerTest {
     @Test
     public void testExecute() {
         System.out.println("execute");
-        Callable v = new Addition(5,5,5,5);
+        NumericalTask a = new Addition();
+        a.giveParams(new Params(1.0,2.0,3.0,4.0,5.0));
         Executioner instance = new Executioner();
-        instance.execute(v);
+        instance.execute(a);
     }
     
 }
