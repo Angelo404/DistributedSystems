@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package layertwo.executioner;
+package layertwo.data;
 
-import clientLayer.executioner.Executioner;
-import java.util.concurrent.Callable;
-import clientLayer.tasks.NumericalTask;
-import clientLayer.tasks.Params;
-import clientLayer.tasks.Addition;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author Euaggelos
  */
-public class ExecutionerTest {
+public class TupleTest {
     
-    public ExecutionerTest() {
+    private Tuple tuple1;
+    private Tuple tuple2;
+    
+    public TupleTest() {
     }
     
     @BeforeClass
@@ -35,22 +34,16 @@ public class ExecutionerTest {
     
     @Before
     public void setUp() {
+        tuple1 = new Tuple(100,1);
     }
     
     @After
     public void tearDown() {
     }
 
-    /**
-     * Test of execute method, of class Executioner.
-     */
     @Test
-    public void testExecute() {
-        System.out.println("execute");
-        NumericalTask a = new Addition();
-        a.giveParams(new Params(1.0,2.0,3.0,4.0,5.0));
-        Executioner instance = new Executioner();
-        instance.execute(a);
+    public void testSomeMethod() {
+        System.out.println(tuple1.getx());
     }
     
 }

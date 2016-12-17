@@ -3,26 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package layertwo.executioner;
+package layertwo.daemons;
 
-import clientLayer.executioner.Executioner;
-import java.util.concurrent.Callable;
-import clientLayer.tasks.NumericalTask;
-import clientLayer.tasks.Params;
-import clientLayer.tasks.Addition;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author Euaggelos
  */
-public class ExecutionerTest {
+public class HeartbeatDaemonTest {
     
-    public ExecutionerTest() {
+    HeartbeatDaemon hbd;
+    
+    public HeartbeatDaemonTest() {
     }
     
     @BeforeClass
@@ -35,6 +35,7 @@ public class ExecutionerTest {
     
     @Before
     public void setUp() {
+        hbd = new HeartbeatDaemon(true);
     }
     
     @After
@@ -42,15 +43,21 @@ public class ExecutionerTest {
     }
 
     /**
-     * Test of execute method, of class Executioner.
+     * Test of execute method, of class HeartbeatDaemon.
      */
     @Test
     public void testExecute() {
         System.out.println("execute");
-        NumericalTask a = new Addition();
-        a.giveParams(new Params(1.0,2.0,3.0,4.0,5.0));
-        Executioner instance = new Executioner();
-        instance.execute(a);
+        hbd.execute();
+        System.out.println(hbd.getAlive());
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HeartbeatDaemonTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(hbd.getAlive());
     }
+
+
     
 }

@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package layertwo.executioner;
+package clientLayer.networking;
 
-import clientLayer.executioner.Executioner;
-import java.util.concurrent.Callable;
-import clientLayer.tasks.NumericalTask;
-import clientLayer.tasks.Params;
-import clientLayer.tasks.Addition;
+import basicLayer.data.packages.DataUnit;
+import java.util.Collection;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author Euaggelos
  */
-public class ExecutionerTest {
+public class TCPBridgeTest {
     
-    public ExecutionerTest() {
+    public TCPBridgeTest() {
+
     }
     
     @BeforeClass
@@ -35,6 +34,7 @@ public class ExecutionerTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -42,15 +42,16 @@ public class ExecutionerTest {
     }
 
     /**
-     * Test of execute method, of class Executioner.
+     * Test of run method, of class TCPBridge.
      */
     @Test
-    public void testExecute() {
-        System.out.println("execute");
-        NumericalTask a = new Addition();
-        a.giveParams(new Params(1.0,2.0,3.0,4.0,5.0));
-        Executioner instance = new Executioner();
-        instance.execute(a);
+    public void testRun() {
+        System.out.println("run");
+        TCPBridge instance = null;
+        instance.run();
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
+
     
 }

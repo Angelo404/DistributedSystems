@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package layertwo.executioner;
+package layertwo.networking;
 
-import clientLayer.executioner.Executioner;
-import java.util.concurrent.Callable;
-import clientLayer.tasks.NumericalTask;
-import clientLayer.tasks.Params;
-import clientLayer.tasks.Addition;
+import clientLayer.networking.TCPBridge;
+import clientLayer.data.TaskQueue;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,9 +17,12 @@ import org.junit.Test;
  *
  * @author Euaggelos
  */
-public class ExecutionerTest {
+public class TCPBridgeTest {
+    private Thread thread1;
+    private Thread thread2;
+    private TaskQueue taskQueue;
     
-    public ExecutionerTest() {
+    public TCPBridgeTest() {
     }
     
     @BeforeClass
@@ -35,6 +35,10 @@ public class ExecutionerTest {
     
     @Before
     public void setUp() {
+        thread1 = new TCPBridge(taskQueue);
+        thread2 = new TCPBridge(taskQueue);
+        thread1.start();
+        thread2.start();
     }
     
     @After
@@ -42,15 +46,12 @@ public class ExecutionerTest {
     }
 
     /**
-     * Test of execute method, of class Executioner.
+     * Test of run method, of class TCPBridge.
      */
     @Test
-    public void testExecute() {
-        System.out.println("execute");
-        NumericalTask a = new Addition();
-        a.giveParams(new Params(1.0,2.0,3.0,4.0,5.0));
-        Executioner instance = new Executioner();
-        instance.execute(a);
+    public void testRun() {
+        System.out.println("run");
+        
     }
     
 }
