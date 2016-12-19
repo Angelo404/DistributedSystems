@@ -5,16 +5,13 @@
  */
 package error.exceptions;
 
-import error.warnings.WarningMessages;
-
 /**
  *
  * @author Angelo
  */
-public class ExceptionNumberParams extends CustomException{
-
-    public ExceptionNumberParams(){
-        super(WarningMessages.CONSTRUCTOR_SWITCH_MISSMATCH.getDiscription());
-    }
-
+public interface WarningsAndErrors {
+    
+    public String getShortDiscription();
+    public String getLongDescription();
+    public int getCode();
 }

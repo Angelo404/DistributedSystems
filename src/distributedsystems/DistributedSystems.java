@@ -16,7 +16,7 @@ public class DistributedSystems {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Thread(new Node()).start();
-        //new Thread(new Node()).start();
+        new Thread(new FirstTeirNode()).start();
+        //new Thread(new FirstTeirNode()).start();
     }
 }

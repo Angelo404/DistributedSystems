@@ -15,11 +15,10 @@ import utils.InitializerTimer;
  */
 public abstract class TCPBridge extends NetworkBridge{
     
-    protected Boolean running;
+    
         
     public TCPBridge(){
         super();
-        this.running = true;
         this.port = ClientLayerConfig.PORT;
     }
 
@@ -30,8 +29,8 @@ public abstract class TCPBridge extends NetworkBridge{
 
     @Override
     public void terminateConnection() {
-        InitializerTimer.execute("Terminating loop...", 200);
-        this.running = false;
-        super.terminateThread();
+        terminateThread();
+        InitializerTimer.execute("Terminating Bridge...", 200);
+        
     }
 }

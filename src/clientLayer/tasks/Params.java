@@ -5,6 +5,7 @@
  */
 package clientLayer.tasks;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,15 +13,20 @@ import java.util.Arrays;
  *
  * @author Angelo
  */
-public class Params<E> extends ArrayList<E>{
+public class Params<E> extends SecondTeirDataUnit implements Serializable{
             
+    private ArrayList<E> params = new ArrayList<>();
+    
     public Params (E ... params){
-        this.addAll(Arrays.asList(params));
+        this.params.addAll(Arrays.asList(params));
     }
     
     public ArrayList<E> getParams(){
-        return this;
+        return params;
     }
     
+    public int size(){
+        return params.size();
+    }
     
 }

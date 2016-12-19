@@ -28,6 +28,7 @@ public class InitializerTimer {
         try {
             Thread.sleep(seconds);
         } catch (InterruptedException ex) {
+            //Thread.currentThread().interrupt();
             Logger.getLogger(InitializerTimer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

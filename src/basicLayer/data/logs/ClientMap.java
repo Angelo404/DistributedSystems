@@ -21,7 +21,6 @@ public class ClientMap implements Serializable{
     private static final ClientMap instance = new ClientMap();
     private static HashMap<InetAddress, Integer> clientHashMap = new HashMap<>();
     private static InetAddress leaderIP;
-
     
     private ClientMap(){};
     

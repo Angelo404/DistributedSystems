@@ -12,7 +12,7 @@ import java.sql.Timestamp;
  *
  * @author Angelo
  */
-public abstract class Task implements Serializable, TaskMethods{
+public abstract class Task extends SecondTeirDataUnit implements Serializable, TaskMethods{
     
     private final Timestamp timestampCreated;
     private Timestamp timestampCompleted;

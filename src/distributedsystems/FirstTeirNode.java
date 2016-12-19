@@ -19,15 +19,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import basicLayer.messageHandler.MessageHandler;
 import basicLayer.networking.UDPBridge;
-import clientLayer.data.Client;
 import clientLayer.data.TaskQueue;
-import clientLayer.networking.TCPServer;
 
 /**
  *
  * @author Angelo
  */
-public class Node extends Thread{
+public class FirstTeirNode extends Thread{
 
     private final UDPBridge networkBridge;
     private final SyncQueue dataUnitQueueSynch;
@@ -39,7 +37,7 @@ public class Node extends Thread{
     private final Daemon electionDaemon;
     private TaskQueue taskQueueSynch;
     
-    public Node(){
+    public FirstTeirNode(){
         this.dataUnitQueueSynch =  new SyncQueue();
         this.networkBridge = new UDPBridge(dataUnitQueueSynch);
         this.pckgFactory = new PackageFactory();
@@ -52,41 +50,38 @@ public class Node extends Thread{
 
     @Override
     public void run() {
-        TCPServer tcpServer = new TCPServer();
-        Client c = new Client();
-        tcpServer.start();
-        c.start();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        tcpServer.send();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        c.killClient();
-        
-        while(true){}
-//        networkBridge.start();
-//        discoverDaemon.execute();
-//        electionDaemon.execute();
-//        while(!this.currentThread().isInterrupted()){
-//            System.out.println("in node thread");
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            
-//            //DataUnit tmpData = pckgFactory.constructPackage(DataType.DISCOVER);
-//            
-//            //UDPBridge.multicastPackage(tmpData, "127.0.0.1");
-//            processIncomingData();
+//        TCPServer tcpServer = new TCPServer();
+//        Client c = new Client();
+//        tcpServer.start();
+//        c.start();
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(FirstTeirNode.class.getName()).log(Level.SEVERE, null, ex);
 //        }
+//        tcpServer.send();
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(FirstTeirNode.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//        c.killClient();
+//        
+//        while(true){}
+        networkBridge.start();
+        discoverDaemon.execute();
+        electionDaemon.execute();
+        while(!this.currentThread().isInterrupted()){
+            System.out.println("in node thread");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FirstTeirNode.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            processIncomingData();
+        }
     }
     
     public void processIncomingData(){
@@ -96,5 +91,9 @@ public class Node extends Thread{
             System.out.println(tmpData);
             System.out.println(this.clientMap);
         }
+    }
+    
+    public void initiateLeader(){
+        // TODO create the leader
     }
 }

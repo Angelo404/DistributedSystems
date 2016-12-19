@@ -18,17 +18,20 @@ public abstract class NetworkBridge extends Thread{
     
     protected int port;
     protected final InetAddress ip;
+    protected Boolean running;
     
     public NetworkBridge(){
         this.ip = BasicLayerConfig.getIp();
         this.port = BasicLayerConfig.PORT;
+        this.running = true;
     }
         
     public abstract void terminateConnection();
     
     public void terminateThread(){
+        
+        running = false;
         InitializerTimer.execute("Terminating thread...", 200);
-        this.currentThread().interrupt();
     }
 
     @Override

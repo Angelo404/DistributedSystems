@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import utils.InitializerTimer;
 
 /**
  *
@@ -54,6 +56,24 @@ public class TCPServer extends TCPBridge {
                 System.out.println("This is the error");
                 Logger.getLogger(TCPServer.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+    }
+    
+    @Override
+    public void terminateConnection() {       
+        super.terminateConnection();
+        InitializerTimer.execute("Terminating Server...", 200);
+        try {
+            socket.close();
+            connectionSocket.close();
+        } catch (SocketException ex) {
+            Logger.getLogger(TCPServer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TCPServer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex){
+            System.err.println("This should only occur if the netwrok interface has never started."
+                    + " It is caused because the input stream has not been created"
+                    + "since the network bridge has not received anything yet.");
         }
     }
 }

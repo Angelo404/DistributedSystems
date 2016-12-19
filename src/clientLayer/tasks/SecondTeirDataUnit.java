@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package error;
+package clientLayer.tasks;
 
 /**
  *
  * @author Angelo
  */
-public interface WarningsAndErrors {
+public abstract class SecondTeirDataUnit {
     
-    public String getDiscription();
-    public int getCode();
+    public SecondTeirDataUnit(){}
+    
 }

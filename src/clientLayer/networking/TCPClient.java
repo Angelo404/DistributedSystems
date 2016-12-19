@@ -29,6 +29,7 @@ public class TCPClient extends TCPBridge {
         super();
         this.taskQueue = taskQueue;
         this.running = true;
+        this.objectInput = null;
     }
 
     @Override
@@ -70,18 +71,17 @@ public class TCPClient extends TCPBridge {
 
     @Override
     public void terminateConnection() {
-        InitializerTimer.execute("Terminating client connection...", 200);
-        running = false;
+        super.terminateConnection();
+        InitializerTimer.execute("Terminating Client...", 200);
         try {
             objectInput.close();
             socket.close();
+        } catch (NullPointerException ex){
+            System.err.println("This should only occur if the netwrok interface has never started."
+                    + " It is caused because the input stream has not been created"
+                    + "since the network bridge has not received anything yet.");
         } catch (IOException ex) {
             Logger.getLogger(TCPClient.class.getName()).log(Level.SEVERE, null, ex);
         }
-        super.terminateConnection();
-    }
-
-    public Boolean isRunning() {
-        return running;
     }
 }
