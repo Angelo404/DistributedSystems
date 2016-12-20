@@ -11,8 +11,7 @@ package distributedsystems;
  */
 public interface SecondTierBehaviour {
     
-    public void switchBehaviour();
-    public void assumeNewBehaviour(SecondTierBehaviour beh);
+    public SecondTierBehaviour switchBehaviour();
     public void killPrevBehaviour();
     public void assume();
     

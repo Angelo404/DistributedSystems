@@ -25,12 +25,22 @@ public class SecondTierNode extends Thread{
         currentBehaviour = new ClientBehaviour();
     }  
     
-    public void setBehaviour(final SecondTierBehaviour behaviour){
+    public void switchBehaviour(){
+        tmpBehaviour = currentBehaviour.switchBehaviour();
+        setBehaviour(tmpBehaviour);
+    }
+    
+    public void setBehaviour(SecondTierBehaviour behaviour){
+        currentBehaviour.killPrevBehaviour();
         currentBehaviour = behaviour;
     }
     
     public void assumeBehaviour(){
         currentBehaviour.assume();
+    }
+    
+    public void killBehaviour(){
+        currentBehaviour.killPrevBehaviour();
     }
     
 }

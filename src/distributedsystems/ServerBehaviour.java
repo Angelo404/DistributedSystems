@@ -6,8 +6,6 @@
 package distributedsystems;
 
 import clientLayer.networking.TCPServer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,14 +21,10 @@ public class ServerBehaviour extends Behaviour implements SecondTierBehaviour {
     @Override
     public void run() {
         // TODO introduce the main loop
-//        while (isRunning) {
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(ServerBehaviour.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+        System.err.println("is this being printed");
+        while (isRunning) {
             System.out.println("Server Behaviour");
-//        }
+        }
     }
 
     public void locateIdleClients() {
@@ -50,27 +44,24 @@ public class ServerBehaviour extends Behaviour implements SecondTierBehaviour {
     }
 
     @Override
-    public void switchBehaviour() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void assumeNewBehaviour(SecondTierBehaviour beh) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public void killPrevBehaviour() {
         isRunning = false;
         network.terminateConnection();
+        this.interrupt();
     }
 
     @Override
-    public void assume() {      
-        if(isRunning){
+    public void assume() {
+        if (isRunning) {
             killPrevBehaviour();
         }
+        isRunning = true;
         this.start();
+    }
+
+    @Override
+    public SecondTierBehaviour switchBehaviour() {
+        return new ClientBehaviour();
     }
 
 }

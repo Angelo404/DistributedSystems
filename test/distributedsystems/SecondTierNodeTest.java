@@ -12,11 +12,10 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
- * @author Euaggelos
+ * @author Angelo
  */
 public class SecondTierNodeTest {
 
@@ -48,22 +47,32 @@ public class SecondTierNodeTest {
     @Test
     public void testSetBehaviour() {
         System.out.println("setBehaviour");
-        instance.setBehaviour(new ServerBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ClientBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ServerBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ClientBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ServerBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ClientBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ServerBehaviour());
-        instance.assumeBehaviour();
-        instance.setBehaviour(new ClientBehaviour());
-        instance.assumeBehaviour();
+//        instance.setBehaviour(new ServerBehaviour());
+//        instance.assumeBehaviour();
+//        instance.setBehaviour(new ClientBehaviour());
+//        instance.assumeBehaviour();
+//        instance.setBehaviour(new ServerBehaviour());
+//        instance.assumeBehaviour();
+//        instance.killBehaviour();
     }
     
+    @Test
+    public void switchingBehaviour(){
+        System.err.println("switchBehaviour");
+        instance.setBehaviour(new ServerBehaviour());
+        instance.assumeBehaviour();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SecondTierNodeTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        instance.switchBehaviour();
+        instance.assumeBehaviour();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SecondTierNodeTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        instance.killBehaviour();
+    }
 }
