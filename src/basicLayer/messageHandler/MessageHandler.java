@@ -15,7 +15,6 @@ import basicLayer.data.packages.DataLeaderUnit;
 import basicLayer.data.packages.DataUnit;
 import basicLayer.data.packages.DataUpdateUnit;
 import basicLayer.data.packages.DataWannabeLeaderUnit;
-import error.warnings.WarningMessages;
 import basicLayer.messageHandler.specializedHandlers.DebugHandler;
 import basicLayer.messageHandler.specializedHandlers.DiscRespHandler;
 import basicLayer.messageHandler.specializedHandlers.DiscoverHandler;
@@ -23,6 +22,9 @@ import basicLayer.messageHandler.specializedHandlers.ElectionHandler;
 import basicLayer.messageHandler.specializedHandlers.LeaderHandler;
 import basicLayer.messageHandler.specializedHandlers.UpdateHandler;
 import basicLayer.messageHandler.specializedHandlers.WannabeLeaderHandler;
+import error.exceptions.SwitchMatchCustEx;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Part of the Visitor pattern for handling incoming messages
@@ -89,6 +91,10 @@ public class MessageHandler implements HandlerData{
     
     @Override
     public void execute(DataUnit data) {
-        System.err.println(WarningMessages.THIS_SHOULD_NOT_SHOW);
+        try {
+            throw new SwitchMatchCustEx(this.getClass().getName());
+        } catch (SwitchMatchCustEx ex) {
+            Logger.getLogger(MessageHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

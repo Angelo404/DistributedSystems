@@ -6,10 +6,13 @@
 package basicLayer.data.packageConstructor;
 
 import basicLayer.data.packages.DataUnit;
-import error.warnings.WarningMessages;
+import error.exceptions.SwitchMatchCustEx;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Factory pattern
+ *
  * @author Angelo
  */
 public class PackageFactory {
@@ -22,8 +25,8 @@ public class PackageFactory {
     private final UpdateConstructor updateCon;
     private final DebugConstructor debugCon;
     private final WannabeLeaderConstructor wannabeLeaderCon;
-    
-    public PackageFactory(){
+
+    public PackageFactory() {
         ackCon = new AckConstructor();
         discCon = new DiscoverConstructor();
         discRespCon = new DiscRespConstructor();
@@ -33,11 +36,11 @@ public class PackageFactory {
         debugCon = new DebugConstructor();
         wannabeLeaderCon = new WannabeLeaderConstructor();
     }
-    
-    public DataUnit constructPackage(DataType type){
+
+    public DataUnit constructPackage(DataType type) {
         DataUnit tmpData = null;
-        
-        switch(type){
+
+        switch (type) {
             case ACK:
                 tmpData = ackCon.createPackage();
                 break;
@@ -62,13 +65,18 @@ public class PackageFactory {
             case WANNABELEADER:
                 tmpData = wannabeLeaderCon.createPackage();
                 break;
-            default:
-                System.err.println(WarningMessages.CONSTRUCTOR_SWITCH_MISSMATCH);
-                break;
-                
+            default: {
+                try {
+                    throw new SwitchMatchCustEx(this.getClass().getName());
+                } catch (SwitchMatchCustEx ex) {
+                    Logger.getLogger(PackageFactory.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
+
         }
         return tmpData;
-        
+
     }
-    
+
 }

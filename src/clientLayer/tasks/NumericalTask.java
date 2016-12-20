@@ -5,7 +5,7 @@
  */
 package clientLayer.tasks;
 
-import error.exceptions.ExceptionNumberParams;
+import error.exceptions.FewParametersCustEx;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
@@ -30,8 +30,8 @@ public abstract class NumericalTask extends Task implements Callable<Number>{
             if(params.size() > 0)
                 this.params = params.getParams();
             else
-                throw new ExceptionNumberParams();
-        } catch (ExceptionNumberParams ex) {
+                throw new FewParametersCustEx(this.getClass().getCanonicalName());
+        } catch (FewParametersCustEx ex) {
             Logger.getLogger(Addition.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

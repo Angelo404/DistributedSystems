@@ -9,12 +9,12 @@ package error.exceptions;
  *
  * @author Angelo
  */
-public enum ErrorMessages implements WarningsAndErrors{
+public enum ErrorMessage implements WarningsAndErrors{
     
     NOT_ENOUGH_PARAMS(1, "More parameters are needed for this operation",
                                 "This message will be displayed in case the client"
                                 + " gets less parameters than the operation requires"),
-    CONSTRUCTOR_SWITCH_MISSMATCH(2, "Switch statement failed to find a match",
+    CONSTRUCTOR_SWITCH_MISSMATCH(2, "Switch/constructor (visitor pattern) statement failed to find a match",
                                 "In general this should never occur but just in case the switch"
                                 + "statement results to default this will be printed"),
     NULL_POINTER_FOR_SOCKET_ON_CLOSE(50, "Socket port has not been initialized",
@@ -31,7 +31,7 @@ public enum ErrorMessages implements WarningsAndErrors{
     private final String shortDescription;
     private final String longDescription;
     
-    private ErrorMessages(int code, String shortDescription, String longDescription) {
+    private ErrorMessage(int code, String shortDescription, String longDescription) {
     this.code = code;
     this.shortDescription = shortDescription;
     this.longDescription = longDescription;
