@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.messageHandler;
 
 import basicLayer.data.packages.DataDebugUnit;
@@ -16,6 +11,8 @@ import basicLayer.data.packages.DataWannabeLeaderUnit;
 
 /**
  * Part of the Visitor pattern (visitor). 
+ * You need to have one handler for every data class type
+ * you are expecting to receive.
  * @author Angelo
  */
 public interface HandlerData {

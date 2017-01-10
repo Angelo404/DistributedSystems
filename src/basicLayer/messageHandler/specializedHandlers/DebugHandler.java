@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.messageHandler.specializedHandlers;
 
 import basicLayer.data.logs.ClientMap;
@@ -10,16 +5,23 @@ import basicLayer.data.packageConstructor.PackageFactory;
 import basicLayer.data.packages.DataDebugUnit;
 
 /**
- *
+ * Handler for Debug packages.
  * @author Angelo
  */
 public class DebugHandler extends SpecializedHandler{
-    // TODO print the debug
     
+    /**
+     * Constructor for the Debug Handler.
+     * @param pckgFactory PackageFactory
+     */
     public DebugHandler(PackageFactory pckgFactory){
         super(pckgFactory);
     }
-    
+
+    /**
+     * Execute this when you receive a Debug package.
+     * @param data DataDebugUnit
+     */
     public void handleData(DataDebugUnit data){
         System.err.println("in debug");
         ClientMap.getInstance().addHost(data.getIp());

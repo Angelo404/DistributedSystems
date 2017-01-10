@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.messageHandler;
 
 import basicLayer.algorithms.Algo;
@@ -27,7 +22,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Part of the Visitor pattern for handling incoming messages
+ * Part of the Visitor pattern for handling incoming messages.
+ * Like the HandlerData.java you need to have one method that will take care
+ * the incoming packages.
  * @author Angelo
  */
 public class MessageHandler implements HandlerData{
@@ -54,41 +51,75 @@ public class MessageHandler implements HandlerData{
         this.pckgFactory = pckgFactory;
     }
 
+    /**
+     * Call the handler for Debug packages.
+     * @param data DataDebugUnit
+     */
     @Override
     public void execute(DataDebugUnit data) {
         handleDebug.handleData(data);
     }
     
+    /**
+     * Call the handler for Discover-Response packages.
+     * @param data DataDiscRespUnit
+     */
     @Override
     public void execute(DataDiscRespUnit data) {
-        handleDiscResp.handleData(data, this.pckgFactory);
+        handleDiscResp.handleData(data);
     }
 
+    /**
+     * Call the handler for Discover packages.
+     * @param data DataDiscoverUnit
+     */
     @Override
     public void execute(DataDiscoverUnit data) {
         handleDisc.handleData(data);
     }
 
+    /**
+     * Call the handler for Election packages.
+     * @param data DataElectionUnit
+     */
     @Override
     public void execute(DataElectionUnit data) {
         handleElect.handleData(data, this.algo);
     }
     
+    /**
+     * Call the handler for Leader packages.
+     * @param data DataLeaderUnit
+     */
     @Override
     public void execute(DataLeaderUnit data) {
         handleLeader.handleData(data, this.algo);
     }
 
+    /**
+     * Call the handler for Update packages.
+     * @param data DataUpdateUnit
+     */
     @Override
     public void execute(DataUpdateUnit data) {
         handleUpdate.handleData(data);
     }
 
+    /**
+     * Call the handler for WannabeLeader packages.
+     * @param data
+     */
     @Override
     public void execute(DataWannabeLeaderUnit data) {
         handleWannabeLeader.handleData(data, algo);
     }
     
+    /**
+     * This is a general call which should never be called 
+     * since the DataUnit is abstract. It is just here as
+     * last resort in case something goes wrong.
+     * @param data
+     */
     @Override
     public void execute(DataUnit data) {
         try {

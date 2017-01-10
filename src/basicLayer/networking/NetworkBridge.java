@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.networking;
 
 import basicLayer.data.BasicLayerConfig;
@@ -11,7 +6,8 @@ import utils.InitializerTimer;
 
 
 /**
- *
+ * This works as the basis for all networking instances whether 
+ * they are TCP or UDP.
  * @author Angelo
  */
 public abstract class NetworkBridge extends Thread{

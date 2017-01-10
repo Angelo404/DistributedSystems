@@ -1,23 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packages;
 
 
 import basicLayer.messageHandler.HandlerData;
 
 /**
- *
+ * The Discover package is sent by the new node to make its
+ * present known to the network.
  * @author Angelo
  */
 public class DataDiscoverUnit extends DataUnit{
         
+    /**
+     * Discover package constructor.
+     */
     public DataDiscoverUnit() {
         super();
     }
     
+    /**
+     * This is called when the package has been received
+     * and it is about to be handled by the receiver
+     * It is part of the Visitor pattern.
+     * @param handlerSwitch HandlerData
+     */
     @Override
     public void accept(HandlerData handlerSwitch) {
         handlerSwitch.execute(this);

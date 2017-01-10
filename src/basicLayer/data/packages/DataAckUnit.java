@@ -1,22 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packages;
 
 import basicLayer.messageHandler.HandlerData;
 
 /**
- *
+ * The Acklowledgement package is sent when then node needs to
+ * acklowledge that the message was received successfully.
  * @author Angelo
  */
 public class DataAckUnit extends DataUnit{
 
+    /**
+     * Acknowledgement package constructor.
+     */
     public DataAckUnit() {
         super();
     }
 
+    /**
+     * This is called when the package has been received
+     * and it is about to be handled by the receiver
+     * It is part of the Visitor pattern.
+     * @param handlerSwitch HandlerData
+     */
     @Override
     public void accept(HandlerData handlerSwitch) {
         handlerSwitch.execute(this);
