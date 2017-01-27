@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Part of the Visitor pattern for handling incoming messages.
+ * Part of the Visitor pattern for handling incoming messages 
  * Like the HandlerData.java you need to have one method that will take care
  * the incoming packages.
  * @author Angelo
@@ -116,7 +116,7 @@ public class MessageHandler implements HandlerData{
     
     /**
      * This is a general call which should never be called 
-     * since the DataUnit is abstract. It is just here as
+     * since the DataUnit is abstract; It is just here as
      * last resort in case something goes wrong.
      * @param data
      */

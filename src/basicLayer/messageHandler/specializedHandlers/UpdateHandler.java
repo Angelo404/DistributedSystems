@@ -18,9 +18,9 @@ public class UpdateHandler extends SpecializedHandler{
     }
     
     /**
-     * Execute this when you receive an Update package.
-     * TODO (I AM NOT SURE IF THIS NEEDS MORE FUNCTIONALITY.
-     * LEAVE IT LIKE THIS TILL I THINK OF SOMETHING)
+     * Execute this when you receive an Update package;
+     * TODO (I AM NOT SURE IF THIS NEEDS MORE FUNCTIONALITY
+     * LEAVE IT LIKE THIS TILL I THINK OF SOMETHING).
      * @param data DataUpdateUnit
      */
     public void handleData(DataUpdateUnit data){

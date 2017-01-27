@@ -29,7 +29,7 @@ public abstract class DataUnit implements Serializable, Handler{
     }
     
     /**
-     * This will return the ip address of the sender.
+     * This will return the IP address of the sender.
      * @return InetAddress
      */
     public InetAddress getIp(){

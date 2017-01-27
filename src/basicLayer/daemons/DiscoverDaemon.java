@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.daemons;
 
 import basicLayer.data.packageConstructor.DataType;
@@ -11,15 +6,22 @@ import java.util.TimerTask;
 import basicLayer.networking.UDPBridge;
 
 /**
- *
+ * This is the class for the discover daemon.
  * @author Angelo
  */
 public class DiscoverDaemon extends Daemon{
     
+    /**
+     * Constructor of discover daemon.
+     * @param pckgFactory PackageFactory
+     */
     public DiscoverDaemon(PackageFactory pckgFactory) {
         super(pckgFactory);
     }
     
+    /**
+     * Execute the daemon.
+     */
     @Override
     public void execute() {
         daemonTimer.schedule(new TimerTask() {
@@ -30,6 +32,9 @@ public class DiscoverDaemon extends Daemon{
         }, 0, 5000); // once every minute 60 * 1000
     }
 
+    /**
+     * Terminate the daemon.
+     */
     @Override
     public void terminate() {
         daemonTimer.cancel();

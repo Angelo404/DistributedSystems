@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.daemons;
 
 import basicLayer.algorithms.Algo;
@@ -14,6 +9,13 @@ import basicLayer.data.packageConstructor.PackageFactory;
  */
 public class DaemonFactory {
     
+    /**
+     * Factory to create leader election algorithms.
+     * @param type DaemonType
+     * @param pckgFactory PackageFactory
+     * @param algo Algo
+     * @return Daemon
+     */
     public static Daemon createDaemon(DaemonType type, PackageFactory pckgFactory, Algo algo){
         Daemon d = null;
         switch(type){

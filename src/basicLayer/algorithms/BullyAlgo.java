@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.algorithms;
 
 import basicLayer.data.BasicLayerConfig;
@@ -18,7 +13,7 @@ import basicLayer.networking.UDPBridge;
 
 
 /**
- *
+ * This is the implementation of the bully algorithm for the leader elections.
  * @author Angelo
  */
 public class BullyAlgo extends Algo{    
@@ -31,36 +26,68 @@ public class BullyAlgo extends Algo{
         this.clientMap = ClientMap.getInstance();
     }
 
+    /**
+     * In case a higher ID has been seen stop participating.
+     */
     @Override
     public void hasSeenHigher() {
         isParticipating = false;
     }
     
+    /**
+     * Return whether or not the node is participating in the elections.
+     * @return boolean
+     */
     @Override
     public boolean isParticipating() {
         return isParticipating;
     }
 
+    /**
+     * This will be invoked if a new node enters the network;
+     * It will set isParticipating field to true.
+     */
     @Override
     public void newPerson() {
         isParticipating = true;
     }
 
+    /**
+     * This will be invoked when a new election has been called.
+     */
     @Override
     public void newEllection() {
         isParticipating = true;
     }
 
+    /**
+     * This will be invoked when a DataLeaderUnit is received;
+     * It will set the new leader into the host index.
+     * @param data DataLeaderUnit
+     */
     @Override
     public void handleData(DataLeaderUnit data) {
         clientMap.setLeader(data.getIp());
     }
 
+    /**
+     * This will be invoked when a DataElectionUnit is received;
+     * It will create a new WannabeLeader package, and broadcast it.
+     * @param data DataElectionUnit
+     */
     @Override
     public void handleData(DataElectionUnit data) {
         UDPBridge.multicastPackage(pckgFactory.constructPackage(DataType.WANNABELEADER), clientMap.getIps());
     }
 
+    /**
+     * This will be invoked when a WannabeLeader data unit is received;
+     * It will compare the ID of the node that wants to be leader with 
+     * its own node; If the remote node has higher ID then the host will
+     * set the iAmLeader variable to false; If the remote node has smaller
+     * ID then the host node will set the iAmLeader variable to false.
+     * @param data DataWannabeLeaderUnit
+     */
     @Override
     public void handleData(DataWannabeLeaderUnit data) {
         System.out.println("in algo wanna");
@@ -70,6 +97,10 @@ public class BullyAlgo extends Algo{
             iAmLeader = true;
     }
     
+    /**
+     * This will be invoked when the host wants to start an election;
+     * It will broadcast WannabeLeader data unit.
+     */
     @Override
     public void startElection() {
         UDPBridge.multicastPackage(pckgFactory.constructPackage(DataType.WANNABELEADER), clientMap.getIps());

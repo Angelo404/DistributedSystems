@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data;
 
 import java.net.InetAddress;
@@ -10,7 +5,7 @@ import utils.Parser;
 
 
 /**
- *
+ * Configuration data for the basic layer.
  * @author Angelo
  */
 public class BasicLayerConfig {
@@ -19,6 +14,10 @@ public class BasicLayerConfig {
     public static final int PCKGSIZE = 1024;
     public static final int UUID = 8;
     
+    /**
+     * This will return the IP address of the host.
+     * @return InetAddress
+     */
     public static InetAddress getIp(){
         return Parser.strToInet(IP);
     }

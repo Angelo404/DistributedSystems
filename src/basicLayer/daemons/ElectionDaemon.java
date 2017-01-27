@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.daemons;
 
 import basicLayer.algorithms.Algo;
@@ -16,18 +11,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This is the class for the election daemon.
  * @author Angelo
  */
 public class ElectionDaemon extends Daemon{
 
     private final Algo algo;
 
+    /**
+     *
+     * @param pckgFactory PackageFactory
+     * @param algo Algo
+     */
     public ElectionDaemon(PackageFactory pckgFactory, Algo algo) {
         super(pckgFactory);
         this.algo = algo;
     }
 
+    /**
+     * Execute the daemon.
+     */
     @Override
     public void execute() {
         daemonTimer.schedule(new TimerTask() {
@@ -46,6 +49,9 @@ public class ElectionDaemon extends Daemon{
         }, 0, 10000); // once every minute 60 * 1000
     }
 
+    /**
+     * Terminate the daemon.
+     */
     @Override
     public void terminate() {
         daemonTimer.cancel();

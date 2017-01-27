@@ -18,8 +18,8 @@ public class AckHandler extends SpecializedHandler {
     }
 
     /**
-     * Execute this when you receive an Acknowledgement package.
-     * TODO (NOT YET IMPLEMENTED)
+     * Execute this when you receive an Acknowledgement package;
+     * TODO (NOT YET IMPLEMENTED).
      * @param data DataAckUnit
      */
     public void handleData(DataAckUnit data) {

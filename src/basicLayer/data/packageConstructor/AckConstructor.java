@@ -1,21 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packageConstructor;
 
 import basicLayer.data.packages.DataAckUnit;
 import basicLayer.data.packages.DataUnit;
 
 /**
- *
+ * Constructor class for Acknowledgment data units.
  * @author Angelo
  */
 public class AckConstructor extends PackageConstructor{
 
+    /**
+     * The constructor is not needed.
+     */
     protected AckConstructor(){};
     
+    /**
+     * Create a new Acknowledgment data unit.
+     * @return DataUnit
+     */
     @Override
     public DataUnit createPackage() {
         return new DataAckUnit();

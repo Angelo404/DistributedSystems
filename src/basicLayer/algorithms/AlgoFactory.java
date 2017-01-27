@@ -1,19 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.algorithms;
 
 import basicLayer.data.packageConstructor.PackageFactory;
 
 
 /**
- * Factory pattern for the election algorithms
+ * Factory pattern for the election algorithms.
  * @author Angelo
  */
 public class AlgoFactory {
     
+    /**
+     * Factory to create leader election algorithms.
+     * @param type AlgoType
+     * @param pckgFactory PackageFactory
+     * @return AlgoType
+     */
     public static Algo createAlgo(AlgoType type, PackageFactory pckgFactory){
         Algo tmpAlgo = null;
         switch(type){
@@ -23,8 +24,6 @@ public class AlgoFactory {
             default:
                 break;
         }
-        
-        
         return tmpAlgo;
     }
     

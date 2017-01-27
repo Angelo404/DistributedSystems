@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.algorithms;
 
 import basicLayer.data.packages.DataElectionUnit;
@@ -11,7 +6,7 @@ import basicLayer.data.packages.DataWannabeLeaderUnit;
 import java.util.concurrent.Callable;
 
 /**
- *
+ * Superclass for election Algorithms.
  * @author Angelo
  */
 public abstract class Algo implements Callable<String>{

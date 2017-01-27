@@ -1,21 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packageConstructor;
 
 import basicLayer.data.packages.DataElectionUnit;
 import basicLayer.data.packages.DataUnit;
 
 /**
- *
+ * Constructor class for Election data units.
  * @author Angelo
  */
 public class ElectionConstructor extends PackageConstructor{
 
+    /**
+     * The constructor is not needed.
+     */
     protected ElectionConstructor(){};
     
+    /**
+     * Create a new Election data unit.
+     * @return DataUnit
+     */
     @Override
     public DataUnit createPackage() {
         return new DataElectionUnit();

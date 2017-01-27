@@ -10,8 +10,7 @@ import basicLayer.data.packages.DataUpdateUnit;
 import basicLayer.data.packages.DataWannabeLeaderUnit;
 
 /**
- * Part of the Visitor pattern (visitor). 
- * You need to have one handler for every data class type
+ * Part of the Visitor pattern (visitor), you need to have one handler for every data class type
  * you are expecting to receive.
  * @author Angelo
  */

@@ -21,7 +21,7 @@ public class WannabeLeaderHandler extends SpecializedHandler{
     
     /**
      * When receive a new WannabeLeader package update the
-     * ClientMap (this should not be done here TODO to be removed.
+     * ClientMap (this should not be done here TODO to be removed;
      * And then it sends the package to the Algorithm for further process.
      * @param data DataWannabeLeaderUnit
      * @param algo Algo

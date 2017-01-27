@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packageConstructor;
 
 import basicLayer.data.packages.DataUnit;
@@ -11,8 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Factory pattern
- *
+ * Factory for creating data units;
  * @author Angelo
  */
 public class PackageFactory {
@@ -26,6 +20,9 @@ public class PackageFactory {
     private final DebugConstructor debugCon;
     private final WannabeLeaderConstructor wannabeLeaderCon;
 
+    /**
+     * Initialize the factory and the constructors for the creation of data units.
+     */
     public PackageFactory() {
         ackCon = new AckConstructor();
         discCon = new DiscoverConstructor();
@@ -37,6 +34,11 @@ public class PackageFactory {
         wannabeLeaderCon = new WannabeLeaderConstructor();
     }
 
+    /**
+     * TODO change this to multiple methods.
+     * @param type DataType
+     * @return DataUnit
+     */
     public DataUnit constructPackage(DataType type) {
         DataUnit tmpData = null;
 

@@ -1,35 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basicLayer.data.packageConstructor;
 
 import basicLayer.data.packages.DataUnit;
 import basicLayer.data.packages.DataWannabeLeaderUnit;
-import basicLayer.messageHandler.Handler;
-import basicLayer.messageHandler.HandlerData;
 
 /**
- *
+ * Constructor class for WannabeLeader data units.
  * @author Angelo
  */
-public class WannabeLeaderConstructor extends PackageConstructor implements Handler{
+public class WannabeLeaderConstructor extends PackageConstructor{
     
-
+    /**
+     * The constructor is not needed.
+     */
     protected WannabeLeaderConstructor(){};
 
-    
+    /**
+     * Create a new WannabeLeader data unit.
+     * @return DataUnit
+     */
     @Override
     public DataUnit createPackage() {
         return new DataWannabeLeaderUnit();
-    }
-
-    @Override
-    public void accept(HandlerData handlerSwitch) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-    
+    }    
 }
