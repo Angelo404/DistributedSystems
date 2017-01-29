@@ -1,7 +1,8 @@
 /build
 /dist
 /nbproject
-
+*.class
+*.save
 
 manifest.mf
 build.xml
