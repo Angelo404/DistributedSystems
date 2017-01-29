@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/distributedsystems/DistributedSystems.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/DiscRespHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/ElectionConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataLeaderUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/AckHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataElectionUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/LeaderHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/DiscRespConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataAckUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/AckConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/WannabeLeaderHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/ElectionHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/Handler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataWannabeLeaderUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/MessageHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/DebugHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/DiscoverHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/UpdateConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/specializedHandlers/UpdateHandler.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/messageHandler/HandlerData.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/PackageFactory.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataDiscoverUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataUpdateUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/DiscoverConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/BasicLayerConfig.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataDiscRespUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packages/DataDebugUnit.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/PackageConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/daemons/DiscoverDaemon.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/LeaderConstructor.java</file>
+            <file>file:/C:/Users/Euaggelos/Documents/NetBeansProjects/DistributedSystems/src/basicLayer/data/packageConstructor/WannabeLeaderConstructor.java</file>
+        </group>
+    </open-files>
+</project-private>

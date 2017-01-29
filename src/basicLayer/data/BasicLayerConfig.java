@@ -10,7 +10,7 @@ import utils.Parser;
  */
 public class BasicLayerConfig {
     public static final int PORT = 8800;
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "192.168.137.1"; // 127.0.0.1
     public static final int PCKGSIZE = 1024;
     public static final int UUID = 8;
     
